@@ -16,12 +16,17 @@ object tablero {
             self.error(position.toString() + " no es atravesable")
         }
     }
+    method validar(position){
+        self.validarDentro(position)
+        self.validarAtravesable(position)
+    }
 }
 
 object arriba {
     method siguiente(position) {
         const nueva = position.up(1) 
-        tablero.validarDentro(nueva)
+        //tablero.validarDentro(nueva)
+        tablero.validar(nueva)
         return nueva
     }
 }
@@ -30,8 +35,9 @@ object arriba {
 object abajo {
     method siguiente(position) {
         const nueva = position.down(1) 
-        tablero.validarDentro(nueva)
-        tablero.validarAtravesable(nueva)
+        //tablero.validarDentro(nueva)
+        //tablero.validarAtravesable(nueva)
+        tablero.validar(nueva)
         return nueva
     }
 }
@@ -39,7 +45,8 @@ object abajo {
 object derecha {
     method siguiente(position) {
         const nueva = position.right(1) 
-        tablero.validarDentro(nueva)
+        //tablero.validarDentro(nueva)
+        tablero.validar(nueva)
         return nueva
     }
 
@@ -47,7 +54,8 @@ object derecha {
 object izquierda{
     method siguiente(position) {
         const nueva = position.left(1) 
-        tablero.validarDentro(nueva)
+        //tablero.validarDentro(nueva)
+        tablero.validar(nueva)
         return nueva
     }
 
