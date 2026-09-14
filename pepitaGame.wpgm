@@ -18,7 +18,9 @@ program PepitaGame {
 	game.addVisual(silvestre)
 	game.addVisual(manzana)
 	game.addVisual(alpiste)
-	game.addVisual(muro)
+	//game.addVisual(new Comida())
+	game.addVisual(muro1)
+	game.addVisual(muro2)
 	game.addVisual(pepita)
 	
 	
@@ -38,7 +40,7 @@ program PepitaGame {
 	//game.onCollideDo(pepita,{ entidad => entidad})
 	//game.onCollideDo(pepita,{ entidad => pepita.colisionar(entidad) })
 	game.onCollideDo(pepita,{ entidad => entidad.chocar(pepita) })
-	//game.onTick(1000, "gravedad pepita", {pepita.caer()})
+	game.onTick(800, "gravedad pepita", {pepita.caer()})
 
 	game.start()
 }

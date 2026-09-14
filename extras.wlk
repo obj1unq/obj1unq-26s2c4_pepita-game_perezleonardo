@@ -55,7 +55,7 @@ object silvestre{
         return true
     }
 }
-
+/*
 object manzana {
     const property image = "manzana.png"
     const property position = game.at(5, 5)
@@ -93,6 +93,21 @@ object alpiste {
         return true
     }
 }
+*/
+class Comida {
+    const property image
+    const property position
+    const property energia
+    method chocar(ave){}
+    method esComidoPor(ave){
+        ave.comer(self)
+        game.removeVisual(self)
+    }
+    method esAtravesable(){return true}
+}
+
+const manzana = new Comida(image="manzana.png",position = game.at(5, 5),energia = 100)
+const alpiste = new Comida(image="alpiste.png",position = game.at(8, 3),energia = 50)
 
 object muro {
     const property image = "muro.png"
@@ -105,3 +120,18 @@ object muro {
     method chocar(ave){ 
     }
 }
+
+class Muro {
+    const property image = "muro.png"
+    const property position
+
+    method esAtravesable(){
+        return false 
+    }
+
+    method chocar(ave){ 
+    }
+}
+
+const muro1 = new Muro(position = game.at(4,3))
+const muro2 = new Muro(position = game.at(4,5))
